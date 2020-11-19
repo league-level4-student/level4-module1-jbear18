@@ -29,16 +29,16 @@ public class SwitchStatementDemo {
 			switch(x) {
 			case 0: 
 				System.out.println("0");
-				break;
+			
 			case 1: 
 				System.out.println("1");
-				break;
+			
 			case 2: 
 				System.out.println("2");
-				break;
+			
 			default: 
 				System.out.println("Something went wrong :(");
-				break;
+				
 			}
 		}
 		
@@ -46,6 +46,6 @@ public class SwitchStatementDemo {
 		// This only works when comparing one variable. 
 		// That variable cannot be a floating point value.
 		// Using objects with switch statements is very limited.
-		// It works with Strings and Enums.
+		// It works with Strings and enums.
 	}
 }
