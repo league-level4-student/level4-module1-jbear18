@@ -29,42 +29,48 @@ public class ArrayList<T> {
 T[]num;
 num=(T[]) new Object[values.length+1];
 
-if(loc==0) {
-	num[0]=val;
 	
 	for (int i = 0; i < num.length; i++) {
+		if(i<loc) {
+			num[i]=values[i];
+	}
+		
+	else if(i>loc) {
 		num[i]=values[i-1];
+	}else {
+		num[i]=val;
 	}
-	
+
 }
-else if(loc>0 && loc<values.length) {
-	for (int i = 0; i < loc; i++) {
-		num[i]=values[i];
-	}
-	num[loc]= val;
-	for (int i = loc+1; i < num.length; i++) {
-		num[i]=values[i-1];
-	}
-}else {
-	for (int i = 0; i < num.length; i++) {
-		num[i]=values[i];
-	}
-	num[num.length-1]=val;
-}
-num[loc]=val;
-num=values;
+	values= num;
+
 	}
 
 	public void set(int loc, T val) throws IndexOutOfBoundsException {
-
+values[loc]= val;
 	}
 
 	public void remove(int loc) throws IndexOutOfBoundsException {
-
+T[] num= (T[])new Object[values.length-1];
+for (int i = 0; i < values.length; i++) {
+	if(i<loc) {
+		num[i]= values[i];
+	}
+	else if(i>loc) {
+		num[i-1]= values[i];
+	}else {
+		
+	}
+}
+values=num;
 	}
 
 	public boolean contains(T val) {
-
+for (int i = 0; i < values.length; i++) {
+	if(values[i]==val) {
+		return true;
+	}
+}
 		return false;
 	}
 }
